@@ -33,6 +33,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import io.github.bucket4j.*;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/files")
 public class FilesController {
