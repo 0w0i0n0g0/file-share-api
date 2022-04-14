@@ -14,8 +14,8 @@ apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'io.goorm'
-version '0.0.1'
+group 'com.herokuapp.file-share-rest-api'
+version '1.0.0'
 sourceCompatibility = 1.8
 
 repositories {
