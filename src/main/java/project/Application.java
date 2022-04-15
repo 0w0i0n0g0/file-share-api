@@ -17,7 +17,7 @@ public class Application {
 
 @CrossOrigin("*")
 @RestController
-protected class HealthCheckController {
+private class HealthCheckController {
     @GetMapping("/ping")
     public String healthCheck() {
         return "pong";
