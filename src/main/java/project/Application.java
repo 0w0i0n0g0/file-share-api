@@ -12,10 +12,10 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+}
 
-    @CrossOrigin("*")
-    @GetMapping("/ping")
-    public String healthCheck() {
-        return "pong";
-    }
+@CrossOrigin("*")
+@GetMapping("/ping")
+public String healthCheck() {
+    return "pong";
 }
