@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableScheduling 
@@ -15,7 +16,10 @@ public class Application {
 }
 
 @CrossOrigin("*")
-@GetMapping("/ping")
-public String healthCheck() {
-    return "pong";
+@RestController
+public class HealthCheckController {
+    @GetMapping("/ping")
+    public String healthCheck() {
+        return "pong";
+    }
 }
