@@ -70,11 +70,14 @@ File uploaded successfully.
 429 - Too Many Requests
 Requests are limited to one request per second.
 
+500 - Internal Server Error
+The server is not fully running yet. Please try again in a few seconds.
+
 503 - Service Unavailable
-You may have exceeded the maximum upload size.
+You may have exceeded the maximum upload size 100MB.
 ```
 
-```json
+```
 [body]
 
 {
@@ -114,13 +117,15 @@ Requests are limited to one request per second.
 
 ### Demo
 
-<a href="">
+<a href="https://file-share-rest-api.herokuapp.com">
   <p align="center">
     <img src="./img/demo.png" width="300"/>
   </p>
 </a>
 
-- [Click here to Try it!]()
+- [Click here to Try it!](https://file-share-rest-api.herokuapp.com)
+
+- [Click here to see source!](https://github.com/0w0i0n0g0/file-share-rest-api/blob/main/src/main/resources/static/index.html)
 
 <br>
 
