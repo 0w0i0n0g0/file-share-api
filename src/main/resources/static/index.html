@@ -1,12 +1,248 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
-    <title>file_share_api</title>
-</head>
-<body>
-    <h1>file_share_api</h1>
-    <h2>
-      If you want to learn more about this api, please visit <a href="https://github.com/0w0i0n0g0/file_share_api">here.</a>
-    </h2>
-</body>
+  <head>
+    <meta
+      name="viewport"
+      content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <style>
+      @font-face {
+        font-family: "Pretendard-Regular";
+        src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        text-align: center;
+        width: 70vw;
+        border: 1px solid #d5d9d9;
+        border-radius: 10px;
+        padding: 20px 20px 20px 20px;
+        font-size: 20px;
+        font-family: "Pretendard-Regular";
+        box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+      }
+
+      button {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+        background-color: #e5e5e5;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 0 10px 0 10px;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        vertical-align: middle;
+        font-weight: normal;
+        font-family: "Pretendard-Regular";
+      }
+
+      button:hover {
+        background-color: #f7fafb;
+      }
+
+      button:focus {
+        border-color: #727272;
+        box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+        outline: 0;
+      }
+
+      #file_input {
+        width: 70vw;
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #0f1111;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 0 10px 0 10px;
+        margin: 10px 0 10px 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        overflow-x: scroll;
+        resize: none;
+        font-family: ui-monospace;
+      }
+
+      #key {
+        background-color: #fff;
+        border: 1px solid #d5d9d9;
+        border-radius: 8px;
+        box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+        box-sizing: border-box;
+        color: #0f1111;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 0 10px 0 10px;
+        margin: 10px 0 10px 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        width: 200px;
+        overflow-x: scroll;
+        resize: none;
+        font-family: ui-monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="https://github.com/0w0i0n0g0/file-share-rest-api"
+      class="github-corner"
+      aria-label="View source on GitHub"
+      ><svg
+        width="80"
+        height="80"
+        viewBox="0 0 250 250"
+        style="
+          fill: #909090;
+          color: #fff;
+          position: absolute;
+          top: 0;
+          border: 0;
+          right: 0;
+        "
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <main>
+      <h1>File Share REST API Demo ✨</h1>
+      <p style="color: #909090">By_0w0i0n0g0</p>
+      <form
+        id="file_upload_form"
+        action="https://file-share-rest-api.herokuapp.com/files"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        select files 👇
+        <br />
+        <input id="file_input" type="file" name="files" multiple required />
+        <br />
+        <button type="submit">upload</button>
+      </form>
+      <div id="wait_for_heroku" style="display: none">
+        heroku server is waking up. 🎉 wait for a sec.
+        <br />
+        <img src="wait_for_heroku.webp" width="300px" />
+      </div>
+      <div id="loading" style="visibility: hidden">
+        <br />
+        <img src="loading.webp" width="50px" />
+      </div>
+      <br />
+      <form id="file_download_form">
+        your key 👇
+        <br />
+        <input type="number" id="key" min="0" max="9999" required />
+        <br />
+        <button type="submit">download</button>
+      </form>
+      <h1></h1>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>
+      $("#wait_for_heroku").show();
+      $.get("https://file-share-rest-api.herokuapp.com/ping", function (data) {
+        console.log("ping success");
+        $("#wait_for_heroku").hide();
+      });
+      $("#file_upload_form").submit(function (event) {
+        event.preventDefault();
+        $("#loading").css("visibility", "visible");
+        let form = $("#file_upload_form")[0];
+        let data = new FormData(form);
+        $.ajax({
+          type: "POST",
+          enctype: "multipart/form-data",
+          url: "https://file-share-rest-api.herokuapp.com/files",
+          data: data,
+          processData: false,
+          contentType: false,
+          cache: false,
+          timeout: 600000,
+          error: function (error) {
+            console.log(error);
+            $("#loading").css("visibility", "hidden");
+          },
+          success: function (data) {
+            //Here is your response body.
+            console.log(data);
+            $("#key").val(data.key);
+            $("#loading").css("visibility", "hidden");
+          },
+        });
+      });
+      $("#file_download_form").submit(function (event) {
+        event.preventDefault();
+        window.location.href =
+          "https://file-share-rest-api.herokuapp.com/files/" + $("#key").val();
+      });
+    </script>
+  </body>
 </html>
