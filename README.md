@@ -28,7 +28,9 @@ By_0w0i0n0g0
 
 ## Description
 
-This is Completely **FREE** File Share RESTful API, which provides a function to download a file through a key issued after uploading one or several files.
+This is Completely **FREE** File Share RESTful API.
+
+You can upload files, get a key and download files with the key.
 
 <br>
 <br>
@@ -123,9 +125,9 @@ Requests are limited to one request per second.
   </p>
 </a>
 
-- [Click here to Try it!](https://file-share-rest-api.herokuapp.com)
+- [Click here to try it!](https://file-share-rest-api.herokuapp.com)
 
-- [Click here to see source!](https://github.com/0w0i0n0g0/file-share-rest-api/blob/main/src/main/resources/static/index.html)
+- [Click here to see demo source!](https://github.com/0w0i0n0g0/file-share-rest-api/blob/main/src/main/resources/static/index.html)
 
 <br>
 
@@ -230,7 +232,6 @@ Requests are limited to one request per second.
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script>
   $("#file_download_form").submit(function (event) {
-    event.preventDefault();
     event.preventDefault();
     window.location.href =
       "https://file-share-rest-api.herokuapp.com/files/" + $("#key").val();
