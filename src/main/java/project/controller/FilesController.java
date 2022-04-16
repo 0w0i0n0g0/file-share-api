@@ -22,6 +22,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -226,7 +227,7 @@ public class FilesController {
             Path filePath = Paths.get(keyPath + "/" + downloadFile);
             String contentType = Files.probeContentType(filePath);
             HttpHeaders headers = new HttpHeaders();
-            headers.add(HttpHeaders.CONTENT_TYPE, contentType);
+            headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
             Resource resource = new InputStreamResource(Files.newInputStream(filePath));
             return new ResponseEntity<>(resource, headers, HttpStatus.OK);
         }
