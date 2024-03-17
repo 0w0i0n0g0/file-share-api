@@ -1,6 +1,6 @@
 <div align="center">
 
-# File Share REST API
+# File Share API
 
 <p align="center">
   <img src="./img/logo.png" width="200"/>
@@ -19,6 +19,8 @@ By_0w0i0n0g0
 
 [Example](#example)
 
+[Stack](#stack)
+
 [Policy and Warning](#policy-and-warning)
 
 </div>
@@ -26,9 +28,16 @@ By_0w0i0n0g0
 <br>
 <br>
 
+**This project has been archived, and no more demo servers in operation.**
+
+**But feel free to download and use it. Thank you.**
+
+<br>
+<br>
+
 ## Description
 
-This is Completely **FREE** File Share RESTful API.
+This is Completely **FREE** File Share API.
 
 You can upload files, get a key and download files with the key.
 
@@ -239,6 +248,12 @@ Requests are limited to one request per second.
 </script>
 ```
 
+<br>
+<br>
+
+## Stack
+
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 <br>
 <br>
 
